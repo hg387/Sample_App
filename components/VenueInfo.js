@@ -1,12 +1,10 @@
 import React from 'react'
 import CustomizedAccordion from './CustomizedAccordion'
 
-export const VenueInfo = ({venue}) => {
+export const VenueInfo = ({venue, setSelected, selected}) => {
     return (  
-        <CustomizedAccordion venue = {venue}/>         
-        // <div key={venue.id}>
-        //     <h2>{venue.id}</h2>
-        //     <h1>{venue.name}</h1>
-        // </div>
+        <CustomizedAccordion venue={venue}  setSelected={(value)=>{setSelected}} selected={selected}/>   
     )
 }
+
+export default {VenueInfo}
