@@ -5,7 +5,9 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -21,7 +23,7 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.5rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: 2 }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -34,7 +36,10 @@ const AccordionSummary = styled((props) => (
     transform: 'rotate(90deg)',
   },
   '& .MuiAccordionSummary-content': {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(0.5),
+  },
+  '& .MuiSvgIcon-root': {
+    fontSize: '2vw',
   },
 }));
 
@@ -74,10 +79,17 @@ export default function CustomizedAccordion({venue}) {
     <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography sx ={{fontSize: 'small'}}><h2>{venue.name}</h2><p>{venue.location.formattedAddress.join()}</p></Typography>
+        <Grid container spacing={0.1} rowSpacing={0.1} columnSpacing={0.1}>
+          <Grid item xs={3}>
+              <Typography sx ={{fontSize: '1.5vw', display:'block', fontWeight: 'bold',}}>{venue.name}</Typography>
+          </Grid>
+          <Grid item xs={9}>
+            <Typography sx ={{fontSize: '1.25vw', display:'block'}}>{venue.location.formattedAddress.join()}</Typography>
+          </Grid>
+          </Grid>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx ={{fontSize: 'xx-small'}}>
             {data}
           </Typography>
         </AccordionDetails>

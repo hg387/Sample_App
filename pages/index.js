@@ -21,11 +21,10 @@ export default function  Home({response}) {
      function InnerGrid() {
         return (
           <>
-          
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{p: 0,}}>
                 <Item><SearchBox userData={userInputText} setUserData={setUserInputText} /></Item>
             </Grid>
-            <Box style={{maxHeight: '100vh', overflow: 'auto'}}>
+            <Box style={{maxHeight: '80vh', overflow: 'auto', height:'50%',}}>
             <Grid item xs={12}>
                 <Item><VenuesInfo VenuesInit={venuesList} userInputText={userInputText}/></Item>
             </Grid>
@@ -37,10 +36,10 @@ export default function  Home({response}) {
     return (
         <>
         <Grid container spacing={0.5} rowSpacing={0.5} columnSpacing={0.5}>
-            <Grid item xs={6}>
+            <Grid item xs={5} sx={{ml: 5, mt: 5, p:0,}}>
                 <InnerGrid />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={7}>
                 <Item></Item>    
             </Grid>
         </Grid>

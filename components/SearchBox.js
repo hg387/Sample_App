@@ -12,6 +12,7 @@ export const SearchBox = ({userData, setUserData}) => {
 
     return (
         <SearchBar
+        style={{padding:0}}
         value={tmpData}
         cancelOnEscape={true}
         onChange={(newValue) => setTmpData(newValue)}
