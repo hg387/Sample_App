@@ -2,9 +2,34 @@ html,
 body {
   padding: 0;
   margin: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flexSection {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.flexColScroll {
+  flex-grow: 1;
+  overflow: auto;
+  min-height: 100%;
+}
+
+.flexNoShrink {
+  flex-shrink: 0;
+}
+
 
 a {
   color: inherit;

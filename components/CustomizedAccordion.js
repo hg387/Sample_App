@@ -6,6 +6,7 @@ import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 
+
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -20,7 +21,7 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.5rem' }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -73,8 +74,7 @@ export default function CustomizedAccordion({venue}) {
     <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography align="center">{venue.name}</Typography>
-          <Typography variant="body1" display="block" align="right">{venue.location.formattedAddress.join()}</Typography>
+          <Typography sx ={{fontSize: 'small'}}><h2>{venue.name}</h2><p>{venue.location.formattedAddress.join()}</p></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
