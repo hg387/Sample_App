@@ -36,10 +36,10 @@ export default function  Home({response}) {
     return (
         <>
         <Grid container spacing={0.5} rowSpacing={0.5} columnSpacing={0.5}>
-            <Grid item xs={5} sx={{ml: 5, mt: 5, p:0,}}>
+            <Grid item xs={4} sx={{ml: 5, mt: 5, p:0,}}>
                 <InnerGrid />
             </Grid>
-            <Grid item xs={7}>
+            <Grid item xs={8}>
                 <Item></Item>    
             </Grid>
         </Grid>

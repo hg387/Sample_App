@@ -25,7 +25,7 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: 2 }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: 2 , p:0, m:0,}} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -41,7 +41,11 @@ const AccordionSummary = styled((props) => (
     marginLeft: theme.spacing(0.5),
   },
   '& .MuiSvgIcon-root': {
-    fontSize: '2vw',
+    fontSize: '1.5vw',
+    padding:0
+  },
+  '.MuiButtonBase-root': {
+    display: 'flex',
   },
 }));
 
@@ -124,10 +128,10 @@ export default function CustomizedAccordion({venue}) {
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
         <Grid container spacing={0.1} rowSpacing={0.1} columnSpacing={0.1}>
           <Grid item xs={3}>
-              <Typography sx ={{fontSize: '1.5vw', display:'block', fontWeight: 'bold',}}>{venue.name}</Typography>
+              <Typography sx ={{fontSize: '1vw', display:'block', fontWeight: 'bold',}}>{venue.name}</Typography>
           </Grid>
           <Grid item xs={9}>
-            <Typography sx ={{fontSize: '1.25vw', display:'block'}}>{venue.location.formattedAddress.join()}</Typography>
+            <Typography sx ={{fontSize: '0.75vw', display:'block'}}>{venue.location.formattedAddress.join()}</Typography>
           </Grid>
           </Grid>
         </AccordionSummary>
@@ -136,8 +140,8 @@ export default function CustomizedAccordion({venue}) {
             (photoURL) ? <Box
             component="img"
             sx={{
-              height: '25vw',
-              width: '30vw',
+              height: '25%',
+              width: '90%',
               m:0,
               padding:0,
             }}
@@ -149,7 +153,7 @@ export default function CustomizedAccordion({venue}) {
             {data}
           </Typography>
           {
-            (URL) ? <Link href={URL} underline="howver">
+            (URL) ? <Link href={URL} underline="hover">
               Link
             </Link> : <></>
           }
