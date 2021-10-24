@@ -15,9 +15,9 @@ const Item = styled(Paper)(({ theme }) => ({
   }));
 
 export default function  Home({response}) {
-     var venuesList = response.response.venues
-     const [userInputText, setUserInputText] = useState("");
-
+    var venuesList = response.response.venues
+    const [userInputText, setUserInputText] = useState("");
+     
      function InnerGrid() {
         return (
           <>
