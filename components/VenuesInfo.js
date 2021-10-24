@@ -24,11 +24,10 @@ const locate = async() => {
 }
 
 
-export const VenuesInfo = ({VenuesInit, userInputText, setLatLngMap}) => {
+export const VenuesInfo = ({VenuesList, VenuesInit, userInputText, setLatLngMap, setVenuesList }) => {
     const [Located, setLocated] = useState(false)
     const [Lat, setLat] = useState(39.95)
-    const [Lng, setLng] = useState(-75.16) 
-    const [VenuesList, setVenuesList] = useState(VenuesInit)
+    const [Lng, setLng] = useState(-75.16)
     const [isLoading, setLoading] = useState(false)
 
     const startSearch = useEffect(

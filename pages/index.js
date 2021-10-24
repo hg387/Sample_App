@@ -20,11 +20,11 @@ const Item = styled(Paper)(({ theme }) => ({
   }));
 
 export default function  Home({response}) {
-    //var venuesList = response.response.venues
+    //var VenuesList = response.response.venues
 
-    const [selected, setSelected] = React.useState(null)
+    const [selected, setSelected] = useState(null)
     const [userInputText, setUserInputText] = useState("")
-    const [venuesList, setVenuesList] = useState(response.response.venues)
+    const [VenuesList, setVenuesList] = useState(response.response.venues)
     const [latLngMap, setLatLngMap] = useState(coordsInitial)
     
     function InnerGrid() {
@@ -35,7 +35,7 @@ export default function  Home({response}) {
             </Grid>
             <Box style={{maxHeight: '80vh', overflow: 'auto', height:'50%',}}>
             <Grid item xs={12}>
-                <Item><VenuesInfo setLatLngMap={setLatLngMap} VenuesInit={venuesList} userInputText={userInputText}/></Item>
+                <Item><VenuesInfo VenuesList={VenuesList} setVenuesList={setVenuesList} setLatLngMap={setLatLngMap} VenuesInit={VenuesList} userInputText={userInputText}/></Item>
             </Grid>
             </Box>
           </>
@@ -62,11 +62,11 @@ export default function  Home({response}) {
             <div className={styles.search}>
                 <SearchBox userData={userInputText} setUserData={setUserInputText} />
                 <div className={styles.infoBar}>
-                    <VenuesInfo setLatLngMap={setLatLngMap} VenuesInit={venuesList} userInputText={userInputText}/>
+                    <VenuesInfo VenuesList={VenuesList} setVenuesList={setVenuesList} setLatLngMap={setLatLngMap} VenuesInit={VenuesList} userInputText={userInputText}/>
                 </div>
             </div>
                 
-            <MyMap latLngMap={latLngMap}/>
+            <MyMap selected={selected} latLngMap={latLngMap} markers={VenuesList} setMarkers={setVenuesList} setSelected={setSelected}/>
         </div>
     )
 }
