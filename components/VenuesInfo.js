@@ -24,7 +24,7 @@ const locate = async() => {
 }
 
 
-export const VenuesInfo = ({VenuesInit, userInputText}) => {
+export const VenuesInfo = ({VenuesInit, userInputText, setLatLngMap}) => {
     const [Located, setLocated] = useState(false)
     const [Lat, setLat] = useState(39.95)
     const [Lng, setLng] = useState(-75.16) 
@@ -58,6 +58,7 @@ export const VenuesInfo = ({VenuesInit, userInputText}) => {
                 setLat(position.coords.latitude)
                 setLng(position.coords.longitude)
                 setLocated(true)
+                setLatLngMap([Lat, Lng])
                 fetchVenues()
               return({
                 lat: position.coords.latitude,
@@ -67,7 +68,7 @@ export const VenuesInfo = ({VenuesInit, userInputText}) => {
             () => {
                 setLat(39.95)
                 setLng(-75.16)
-
+                setLatLngMap([Lat, Lng])
                 return({
                 lat: 39.95,
                 lng: -75.16,
@@ -97,7 +98,7 @@ export const VenuesInfo = ({VenuesInit, userInputText}) => {
     //console.log("fetched Info")
     
     return (
-        <div>
+        <>
           {
             (isLoading || !VenuesList) 
             ? <Skeleton variant="rectangular" width='8vw' height='10vw' />
@@ -105,7 +106,7 @@ export const VenuesInfo = ({VenuesInit, userInputText}) => {
               <VenueInfo  key={venue.id} venue={venue}/>
           )
           } 
-        </div>
+        </>
     )
 }
 

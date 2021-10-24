@@ -21,6 +21,28 @@
   flex-shrink: 0;
 }
 
+.search {
+  position: absolute;
+  top: 1rem;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  z-index: 10;
+}
+
+.infoBar {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  z-index: 10;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
 
 .container {
   min-height: 100vh;
