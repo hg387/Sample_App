@@ -54,7 +54,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
-export default function CustomizedAccordion({venue}) {
+export default function CustomizedAccordion({venue, selected, setSelected}) {
   const[details, setDetails] = useState([])
   const [expanded, setExpanded] = useState("")
   const[data, setData]  = useState("")
@@ -67,7 +67,7 @@ export default function CustomizedAccordion({venue}) {
       const data = await fetch(`http://localhost:3000/api/venue/${venue.id}`)
       const res = await data.json()
 
-      console.log(res.response.venue)
+      //console.log(res.response.venue)
 
       if (res.response.venue){
         setDetails(res.response.venue)
@@ -105,7 +105,7 @@ export default function CustomizedAccordion({venue}) {
       }
 
       if (res.response.venue.bestPhoto){
-        console.log(`${res.response.venue.bestPhoto.prefix}300x300${res.response.venue.bestPhoto.suffix}`)
+        //console.log(`${res.response.venue.bestPhoto.prefix}300x300${res.response.venue.bestPhoto.suffix}`)
         setPhotoURL(`${res.response.venue.bestPhoto.prefix}300x300${res.response.venue.bestPhoto.suffix}`)
       }
       else{
@@ -115,8 +115,10 @@ export default function CustomizedAccordion({venue}) {
 
   const handleChange = (panel) => async (event, newExpanded) => {
     if (newExpanded) {
-      if (details.length == 0) await(fetchDesc())
+      if (details.length == 0) {await(fetchDesc())}
+      setSelected(venue)
     }
+    
 
     setExpanded(newExpanded ? panel : false)
     

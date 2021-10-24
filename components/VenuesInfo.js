@@ -24,7 +24,7 @@ const locate = async() => {
 }
 
 
-export const VenuesInfo = ({VenuesList, VenuesInit, userInputText, setLatLngMap, setVenuesList }) => {
+export const VenuesInfo = ({VenuesList, VenuesInit, userInputText, setLatLngMap, setVenuesList, selected, setSelected}) => {
     const [Located, setLocated] = useState(false)
     const [Lat, setLat] = useState(39.95)
     const [Lng, setLng] = useState(-75.16)
@@ -102,7 +102,7 @@ export const VenuesInfo = ({VenuesList, VenuesInit, userInputText, setLatLngMap,
             (isLoading || !VenuesList) 
             ? <Skeleton variant="rectangular" width='8vw' height='10vw' />
             :VenuesList.map(venue =>
-              <VenueInfo  key={venue.id} venue={venue}/>
+              <VenueInfo  key={venue.id} venue={venue} setSelected={setSelected} selected={selected}/>
           )
           } 
         </>
