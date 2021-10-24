@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Rating from '@mui/material/Rating';
+import Link from '@mui/material/Link';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -49,14 +51,26 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export default function CustomizedAccordion({venue}) {
+  const[details, setDetails] = useState([])
   const [expanded, setExpanded] = useState("")
   const[data, setData]  = useState("")
+  const[ratings, setRatings] = useState(0)
+  const[URL, setURL] = useState("")
+  const[phone, setPhone] = useState("")
+  const[photoURL, setPhotoURL] = useState("")
 
   const fetchDesc = async() => {
       const data = await fetch(`http://localhost:3000/api/venue/${venue.id}`)
       const res = await data.json()
 
       console.log(res.response.venue)
+
+      if (res.response.venue){
+        setDetails(res.response.venue)
+      }
+      else{
+        setDetails([])
+      }
       
       if (!res.response.venue.description){
         setData("No Description Available")
@@ -64,11 +78,40 @@ export default function CustomizedAccordion({venue}) {
       else{
         setData(res.response.venue.description)
       }
+
+      if (res.response.venue.rating){
+        setRatings(res.response.venue.rating)
+      }
+      else{
+        setRatings(0)
+      }
+
+      if (res.response.venue.url){
+        setURL(res.response.venue.url)
+      }
+      else{
+        setURL("")
+      }
+
+      if (res.response.venue.contact){
+        setPhone(res.response.venue.contact.formattedPhone)
+      }
+      else{
+        setPhone("")
+      }
+
+      if (res.response.venue.bestPhoto){
+        console.log(`${res.response.venue.bestPhoto.prefix}300x300${res.response.venue.bestPhoto.suffix}`)
+        setPhotoURL(`${res.response.venue.bestPhoto.prefix}300x300${res.response.venue.bestPhoto.suffix}`)
+      }
+      else{
+        setPhotoURL("")
+      }
   }
 
   const handleChange = (panel) => async (event, newExpanded) => {
     if (newExpanded) {
-      await(fetchDesc())
+      if (details.length == 0) await(fetchDesc())
     }
 
     setExpanded(newExpanded ? panel : false)
@@ -89,9 +132,37 @@ export default function CustomizedAccordion({venue}) {
           </Grid>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography sx ={{fontSize: 'xx-small'}}>
+        {
+            (photoURL) ? <Box
+            component="img"
+            sx={{
+              height: '25vw',
+              width: '30vw',
+              m:0,
+              padding:0,
+            }}
+            alt="Image"
+            src={photoURL}
+          />: <></>
+          }
+          <Typography sx ={{fontSize: 'x-small'}}>
             {data}
           </Typography>
+          {
+            (URL) ? <Link href={URL} underline="howver">
+              Link
+            </Link> : <></>
+          }
+          {
+            (phone) ? <Typography sx ={{fontSize: 'x-small', fontStyle: 'italic'}}>
+            {phone}
+          </Typography> : <></>
+          }
+          {
+            (ratings !== 0) 
+            ? <Rating name="read-only" precision={0.5} size="small" value={ratings/2} readOnly /> 
+            : <Rating name="read-only" size="small" value={ratings} disabled />
+          }
         </AccordionDetails>
       </Accordion>
     </div>

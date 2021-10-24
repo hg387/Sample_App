@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SearchBar from "material-ui-search-bar";
+import { styled } from '@mui/material/styles';
 
 export const SearchBox = ({userData, setUserData}) => {
 
@@ -12,7 +13,7 @@ export const SearchBox = ({userData, setUserData}) => {
 
     return (
         <SearchBar
-        style={{padding:0}}
+        style={{padding:0, fontSize:5}}
         value={tmpData}
         cancelOnEscape={true}
         onChange={(newValue) => setTmpData(newValue)}
