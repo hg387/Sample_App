@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useState } from 'react';
 import useSWR from 'swr'
 import { VenueInfo } from './VenueInfo';
@@ -23,11 +23,31 @@ const locate = async() => {
 }
 
 
-export const VenuesInfo = ({VenuesInit}) => {
+export const VenuesInfo = ({VenuesInit, userInputText}) => {
     const [Located, setLocated] = useState(false)
     const [Lat, setLat] = useState(39.95)
     const [Lng, setLng] = useState(-75.16) 
     const [VenuesList, setVenuesList] = useState(VenuesInit)
+
+    const startSearch = useEffect(
+      async () => {
+        if (userInputText){
+        console.log("in callback")
+        const response = await fetchQueryVenues();   
+      }
+    },
+      [userInputText],
+    )
+
+    const fetchQueryVenues = async() => {
+     
+      const newVenues = await fetch(`http://localhost:3000/api/venues/${Lat}/${Lng}/${userInputText}`)
+      const newResponse = await newVenues.json();
+     
+      console.log(newResponse.response.venues)
+      
+      setVenuesList(newResponse.response.venues)
+  }
 
     const locate = async() => {
         const coord = await navigator.geolocation.getCurrentPosition(
@@ -60,7 +80,7 @@ export const VenuesInfo = ({VenuesInit}) => {
         const newVenues = await fetch(`http://localhost:3000/api/venues/${Lat}/${Lng}/`)
         const newResponse = await newVenues.json();
        
-        console.log(newResponse.response.venues)
+        //console.log(newResponse.response.venues)
         
         setVenuesList(newResponse.response.venues)
     }
@@ -68,6 +88,8 @@ export const VenuesInfo = ({VenuesInit}) => {
     useEffect(async () => {
         const locationCords = await locate()
     }, [])
+
+    //console.log("fetched Info")
     
     return (
         <div>

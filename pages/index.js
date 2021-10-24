@@ -1,12 +1,15 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+import { SearchBox } from '../components/SearchBox';
 import { VenuesInfo } from '../components/VenuesInfo'
 
 export default function  Home({response}) {
-    
-    var venuesList = response.response.venues
+     var venuesList = response.response.venues
+     const [userInputText, setUserInputText] = useState("");
+
     return (
         <div>
-          <VenuesInfo VenuesInit={venuesList}/>
+            <SearchBox userData={userInputText} setUserData={setUserInputText} />
+            <VenuesInfo VenuesInit={venuesList} userInputText={userInputText}/>
         </div>
     )
 }

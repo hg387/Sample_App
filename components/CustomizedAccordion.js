@@ -46,9 +46,27 @@ export default function CustomizedAccordion({venue}) {
   const [expanded, setExpanded] = useState("")
   const[data, setData]  = useState("")
 
-  const handleChange = (panel) => (event, newExpanded) => {
+  const fetchDesc = async() => {
+      const data = await fetch(`http://localhost:3000/api/venue/${venue.id}`)
+      const res = await data.json()
+
+      console.log(res.response.venue)
+      
+      if (!res.response.venue.description){
+        setData("No Description Available")
+      }
+      else{
+        setData(res.response.venue.description)
+      }
+  }
+
+  const handleChange = (panel) => async (event, newExpanded) => {
+    if (newExpanded) {
+      await(fetchDesc())
+    }
+
     setExpanded(newExpanded ? panel : false)
-    // to add fetch data here
+    
   };
 
   return (
