@@ -3,6 +3,8 @@
         <img src="https://drive.google.com/uc?id=1MUz-aCXol5VeXLYL1bwGSdrrwpAbMNAm"  alt="Venue Finder" />
 </a>
 
+#### [Demo Link](https://drive.google.com/uc?id=11sPat5ulYD6lz71b3lGFkc-_0LUwFJLQ)
+
 Whenever we are planning to go out for any occassion such as for restaurants, any weekend places, we always tend to check what is trending around our location. Alot of navigation maps don't offer these quick check on trending venues alonside other basic features. That is why, I have created this web responsive app called **Venue Finder** to quickly check trending venues near me or just explore places near me.  It streamline the process of first setting the location, then search for right keywords, even then one might not always find what he/she is looking for. **I have currently deployed app at https://sample-app-gamma.vercel.app/ However, due to limited on time, I am not able to completely tested the deployed app so, for better results, I recommend to run the app locally. **
 
 Time utilized in researching, designing, developing, and deploying: About 2 days
@@ -12,7 +14,7 @@ Time utilized in researching, designing, developing, and deploying: About 2 days
 #### [NEXT JS: React](https://nextjs.org/docs/getting-started)
 Next.js is the react framework purposely built to development in production by providing features such as hybrid static & server rendering, static site generation, TypeScript support, smart bundling, route pre-fetching, and more. The main reasons for me to choice this framework are:
 
-+ **Server Side Rendering (SSR)**: Next.js allows the first page load to be rendered by the internal server, which is great for SEO and performance. Basically allowing incremental static generation. This is significant upgrade from the traditional React SPA where browser downloads the Javascript and run scripts in the run-time to pupulate the content. This causes a problem for the Web Crawlers/SEO as these can not view the content. With Next.js, one can boost marketing and advertising channels and increase your overall visibility and brand awareness very easily.
++ **Server Side Rendering (SSR)**: Next.js allows the first page load to be rendered by the internal server, which is great for SEO and performance. Basically allowing incremental static generation. This is significant upgrade from the traditional React SPA where browser downloads the Javascript and run scripts in the run-time to populate the content. This causes a problem for the Web Crawlers/SEO as these can not view the content. With Next.js, one can boost marketing and advertising channels and increase your overall visibility and brand awareness very easily.
 
 + **API routes**: As Next.js uses internal server,  we do not need any backend to perform OAuth authentication, CRUD operations, and many others. This gives us an easy option to just protect your access code calls without sharing your keys on the Client-side. I am using two public APIs for this app, where every calls to these are masked by this backend server provided by the Next JS.
 
@@ -24,7 +26,7 @@ Next.js is the react framework purposely built to development in production by p
 
 + **Automatic code splitting**
 
-+ **Lazy Loading**: Through lazy loading, Next JS would not going to load extra code preventing loading of modules which are not frequently used. This also moves the more frequently used modules to front to avoid frequent loading of expensive modules
++ **Lazy Loading**: Through lazy loading, Next JS would not going to load extra code preventing loading of modules which are not frequently used. This also means the more frequently used modules to front to avoid frequent loading of expensive modules
 
 + **Built in CSS/SASS support**
 
