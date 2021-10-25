@@ -6,7 +6,7 @@ export const SearchBox = ({ userData, setUserData }) => {
   const handleEnterSubmit = (text) => {
     // console.log(text)
     setUserData(tmpData);
-    console.log(userData);
+    //console.log(userData);
   };
 
   return (

@@ -61,7 +61,12 @@ export const getServerSideProps = async () => {
 
   const response = await testForsquare.json();
 
+  if (response.meta.code === 200){
+    return {
+      props: { response },
+    };
+  }
   return {
-    props: { response },
-  };
+    props: { response: [] },
+  }
 };

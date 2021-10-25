@@ -69,6 +69,10 @@ export default function CustomizedAccordion({ venue, selected, setSelected }) {
 
     // console.log(res.response.venue)
 
+    if (res.meta.code !== 200){
+      return; 
+    }
+
     if (res.response.venue) {
       setDetails(res.response.venue);
     } else {

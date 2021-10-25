@@ -24,7 +24,17 @@ export const VenuesInfo = ({
     );
     const newResponse = await newVenues.json();
 
-    console.log(newResponse.response.venues);
+    if (newResponse.meta.code !== 200){
+      return; 
+    }
+
+    if (!newResponse.response.venues){
+      setVenuesList([]);
+      setLoading(false);
+      return;
+    }
+
+    //console.log(newResponse.response.venues);
 
     setVenuesList(newResponse.response.venues);
     setLoading(false);
@@ -32,18 +42,22 @@ export const VenuesInfo = ({
 
   const startSearch = useEffect(async () => {
     if (userInputText) {
-      console.log('in callback');
+      //console.log('in callback');
       const response = await fetchQueryVenues();
     }
   }, [userInputText]);
 
   const fetchVenues = async () => {
     const newVenues = await fetch(
-      `http://localhost:3000/api/venues/${Lat}/${Lng}/`
+      `${server}/api/venues/${Lat}/${Lng}/`
     );
     const newResponse = await newVenues.json();
 
     // console.log(newResponse.response.venues)
+
+    if (newResponse.meta.code !== 200){
+      return; 
+    }
 
     setVenuesList(newResponse.response.venues);
   };
@@ -86,7 +100,7 @@ export const VenuesInfo = ({
   return (
     <>
       {isLoading || !VenuesList ? (
-        <Skeleton variant="rectangular" width="8vw" height="10vw" />
+        <Skeleton animation="wave" />
       ) : (
         VenuesList.map((venue) => (
           <VenueInfo
