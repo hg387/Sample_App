@@ -64,7 +64,7 @@ export default function CustomizedAccordion({ venue, selected, setSelected }) {
   const [photoURL, setPhotoURL] = useState('');
 
   const fetchDesc = async () => {
-    const dataNew = await fetch(`/api/venue/${venue.id}`);
+    const dataNew = await fetch(`${server}/api/venue/${venue.id}`);
     const res = await dataNew.json();
 
     // console.log(res.response.venue)
