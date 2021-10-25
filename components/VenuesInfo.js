@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import {server} from '../config/'
 import Skeleton from '@mui/material/Skeleton';
 import { VenueInfo } from './VenueInfo';
 
@@ -20,7 +20,7 @@ export const VenuesInfo = ({
   const fetchQueryVenues = async () => {
     setLoading(true);
     const newVenues = await fetch(
-      `http://localhost:3000/api/venues/${Lat}/${Lng}/${userInputText}`
+      `${server}/api/venues/${Lat}/${Lng}/${userInputText}`
     );
     const newResponse = await newVenues.json();
 

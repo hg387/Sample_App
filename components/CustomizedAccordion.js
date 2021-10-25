@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import Link from '@mui/material/Link';
+import {server} from '../config/'
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -63,7 +64,7 @@ export default function CustomizedAccordion({ venue, selected, setSelected }) {
   const [photoURL, setPhotoURL] = useState('');
 
   const fetchDesc = async () => {
-    const dataNew = await fetch(`http://localhost:3000/api/venue/${venue.id}`);
+    const dataNew = await fetch(`${server}/api/venue/${venue.id}`);
     const res = await dataNew.json();
 
     // console.log(res.response.venue)
