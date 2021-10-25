@@ -20,7 +20,7 @@ export const VenuesInfo = ({
   const fetchQueryVenues = async () => {
     setLoading(true);
     const newVenues = await fetch(
-      `${server}/api/venues/${Lat}/${Lng}/${userInputText}`
+      `/api/venues/${Lat}/${Lng}/${userInputText}`
     );
     const newResponse = await newVenues.json();
 
@@ -49,7 +49,7 @@ export const VenuesInfo = ({
 
   const fetchVenues = async () => {
     const newVenues = await fetch(
-      `${server}/api/venues/${Lat}/${Lng}/`
+      `/api/venues/${Lat}/${Lng}/`
     );
     const newResponse = await newVenues.json();
 

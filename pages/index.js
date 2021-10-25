@@ -57,7 +57,7 @@ export default function Home({ response }) {
 }
 
 export const getServerSideProps = async () => {
-  const testForsquare = await fetch(`${server}/api/venues`);
+  const testForsquare = await fetch(`/api/venues`);
 
   const response = await testForsquare.json();
 
