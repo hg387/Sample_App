@@ -3,7 +3,7 @@
         <img src="https://drive.google.com/uc?id=1MUz-aCXol5VeXLYL1bwGSdrrwpAbMNAm"  alt="Venue Finder" />
 </a>
 
-#### [Demo Link](https://drive.google.com/uc?id=11sPat5ulYD6lz71b3lGFkc-_0LUwFJLQ)
+## [Demo Link](https://drive.google.com/uc?id=11sPat5ulYD6lz71b3lGFkc-_0LUwFJLQ)
 
 Whenever we are planning to go out for any occassion such as for restaurants, any weekend places, we always tend to check what is trending around our location. Alot of navigation maps don't offer these quick check on trending venues alonside other basic features. That is why, I have created this web responsive app called **Venue Finder** to quickly check trending venues near me or just explore places near me.  It streamline the process of first setting the location, then search for right keywords, even then one might not always find what he/she is looking for. **I have currently deployed app at https://sample-app-gamma.vercel.app/ However, due to limited on time, I am not able to completely tested the deployed app so, for better results, I recommend to run the app locally. **
 
