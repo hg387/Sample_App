@@ -43,7 +43,6 @@
   overflow-y: auto;
 }
 
-
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -163,5 +162,50 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.googleMap {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.search {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100vw;
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.infoBar {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100vw;
+    z-index: 10;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 950px) {
+  div.search {
+    position: absolute;
+    top: 1rem;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    z-index: 10;
   }
 }
