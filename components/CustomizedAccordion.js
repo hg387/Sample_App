@@ -130,13 +130,13 @@ export default function CustomizedAccordion({ venue, selected, setSelected }) {
           <Grid container spacing={0.1} rowSpacing={0.1} columnSpacing={0.1}>
             <Grid item xs={3}>
               <Typography
-                sx={{ fontSize: '1vw', display: 'block', fontWeight: 'bold' }}
+                sx={{ fontSize: '15px', display: 'block', fontWeight: 'bold' }}
               >
                 {venue.name}
               </Typography>
             </Grid>
             <Grid item xs={9}>
-              <Typography sx={{ fontSize: '0.75vw', display: 'block' }}>
+              <Typography sx={{ fontSize: '12px', display: 'block' }}>
                 {venue.location.formattedAddress.join()}
               </Typography>
             </Grid>
