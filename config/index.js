@@ -1,3 +1,3 @@
 const prod = process.env.NEXT_CHECK_ENV === "production"
 
-export const server = 'https://sample-app-git-hg387-hg387.vercel.app/'
+export const server = prod ? 'https://sample-app-pvphvjlix-hg387.vercel.app' : 'http://localhost:3000'
