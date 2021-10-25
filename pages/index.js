@@ -7,6 +7,7 @@ import { VenuesInfo } from '../components/VenuesInfo';
 import { SearchBox } from '../components/SearchBox';
 import { MyMap } from '../components/MyMap';
 import styles from '../styles/Home.module.css';
+import {server} from '../config/'
 
 const coordsInitial = [39.95, -75.16];
 
@@ -54,7 +55,7 @@ export default function Home({ response }) {
 }
 
 export const getServerSideProps = async () => {
-  const testForsquare = await fetch('http://localhost:3000/api/venues');
+  const testForsquare = await fetch(`${server}/api/venues`);
 
   const response = await testForsquare.json();
 
