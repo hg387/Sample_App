@@ -65,7 +65,7 @@ For just buiilding the app in production, run this command in the root directory
 # Lighthouse Results
 <center>
 <a href="#macropower-tech">
-        <img src="https://drive.google.com/uc?id=1rLN0zRnsw1b5DPAOLUSGz9z29S87Bm8Z" width="225" height="165" alt="SEO Results" />
+        <img src="https://drive.google.com/uc?id=1TZjOo8MigZt3PGC3Gx7AGG3RS_10jbfS" alt="SEO Results" />
 </a>
 </center>
 
