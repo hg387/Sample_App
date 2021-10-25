@@ -20,7 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Home({ response }) {
   // var VenuesList = response.response.venues
-
+  console.log(process.env.NODE_ENV)
   const [selected, setSelected] = useState(null);
   const [userInputText, setUserInputText] = useState('');
   const [VenuesList, setVenuesList] = useState(response.response.venues);
