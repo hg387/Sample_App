@@ -82,18 +82,22 @@ Given more time, this could be improved even further with current choice of colo
         <img src="https://drive.google.com/uc?id=1b5-ryeZDW9hgkAWN0q2ES9wgRaEKvIag"  alt="Venue Finder" />
 </a>
 <a></a>
+<br/>
 
 #####Responsive App with compatible for various range of devices
+<br/>
 ######Iphone X or latest
 <a href="#macropower-tech">
         <img src="https://drive.google.com/uc?id=1tFdXS0AWTtKNAMy5nzQUzji0PmM584p0" height="500" alt="Venue Finder" />
 </a>
 <a></a>
+<br/>
 ######Ipad
 <a href="#macropower-tech">
         <img src="https://drive.google.com/uc?id=1v_ZvVHgq373eI2n2eqksOdKu3D3CpOsX" width="384" height="512" alt="Venue Finder" />
 </a>
 <a></a>
+<br/>
 ######Other Devices
 <a href="#macropower-tech">
         <img src="https://drive.google.com/uc?id=1smJ00bLdGHCr70zBhACf8TNBscxfPdSv" width="270" height="360" alt="Venue Finder" />
