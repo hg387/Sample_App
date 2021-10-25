@@ -6,5 +6,8 @@
   "rules": {
     "react/prop-types": "off",
     "func-names":"off"
+  },
+  "env": {
+    "jest": true
   }
 }
