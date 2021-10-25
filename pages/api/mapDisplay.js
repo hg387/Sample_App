@@ -1,9 +1,3 @@
-import React from 'react'
+import React from 'react';
 
-export const mapDisplay = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+export const mapDisplay = () => <div />;
