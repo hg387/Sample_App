@@ -43,13 +43,15 @@ export default function Home({ response }) {
         </div>
       </div>
 
-      <MyMap
-        selected={selected}
-        latLngMap={latLngMap}
-        markers={VenuesList}
-        setMarkers={setVenuesList}
-        setSelected={setSelected}
-      />
+      <div className={styles.googleMap}>
+        <MyMap
+          selected={selected}
+          latLngMap={latLngMap}
+          markers={VenuesList}
+          setMarkers={setVenuesList}
+          setSelected={setSelected}
+        />
+      </div>
     </div>
   );
 }
